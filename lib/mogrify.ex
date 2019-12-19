@@ -165,6 +165,7 @@ defmodule Mogrify do
     do: ["-annotate"] ++ String.split(params, " ", parts: 2)
 
   defp normalize_arguments({"histogram:" <> option, nil}), do: ["histogram:#{option}"]
+  defp normalize_arguments({"label:" <> option, nil}), do: ["label:#{option}"]
   defp normalize_arguments({"pango", params}), do: ["pango:#{params}"]
   defp normalize_arguments({"stdout", params}), do: ["#{params}"]
   defp normalize_arguments({"+" <> option, nil}), do: ["+#{option}"]
